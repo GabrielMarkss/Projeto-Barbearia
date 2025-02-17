@@ -1,0 +1,207 @@
+/* Navbar */
+nav {
+  background-color: black;
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 5px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between; /* Alinha os elementos nos extremos */
+  align-items: center; /* Alinha verticalmente */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nome {
+  font-size: 20px;
+  font-weight: lighter;
+  color: white;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.botao {
+  background-color: #f36316;
+  color: white;
+  border: none;
+  padding: 4px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; /* Move o botão para baixo */
+}
+
+.botao:hover {
+  background-color: #f46d25;
+}
+
+/* CAROUSEL*/
+
+.carousel-indicators {
+  margin-bottom: -50px;
+}
+
+.carousel {
+  width: 1000px; /* Define a largura */
+  height: 400px; /* Define a altura */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  padding-bottom: 50px;
+}
+
+.carousel-inner,
+.carousel-item {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item img {
+  width: 100%; /* Faz a imagem ocupar toda a largura do carousel */
+  height: 100%; /* Faz a imagem ocupar toda a altura */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  filter: invert(100%); /* Torna os botões visíveis em fundo escuro */
+}
+
+/* CAROUSEL DE CARDS */
+
+#carouselCards {
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.preco {
+  padding: 5px;
+  text-decoration: none;
+  color: #111;
+}
+
+.btn-agendar {
+  background-color: #f36316;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 5px 15px 7px 15px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out; /* Suaviza as transições */
+}
+
+.btn-agendar:hover {
+  background-color: #f46d25;
+}
+
+.btn-agendar:active {
+  background-color: #d95204; /* Cor mais escura ao clicar */
+  transform: scale(0.98); /* Dá um efeito de afundamento */
+}
+
+.card {
+  width: 232px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+}
+
+/* MENU */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-tabs {
+  display: flex;
+  background-color: black;
+}
+
+.menu-tab {
+  flex: 1;
+  padding: 10px 15px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.menu-tab:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.menu-tab.active {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+.menu-content {
+  display: none;
+  padding: 15px;
+  background-color: white;
+}
+
+.menu-content.active {
+  display: block;
+}
+
+.service-item {
+  display: flex;
+  padding: 30px;
+}
+
+.service-image img {
+  max-width: 120px;
+  border-radius: 8px;
+  padding-right: 20px;
+}
+
+.service-content {
+  flex: 1;
+}
+
+.service-content b {
+  font-size: 20px;
+}
+
+.service-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.buy-button {
+  background-color: #f36316;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 5px 15px 7px 15px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out; /* Suaviza as transições */
+}
+
+.buy-button:hover {
+  background-color: #f46d25;
+}
+
+.buy-button:active {
+  background-color: #d95204; /* Cor mais escura ao clicar */
+  transform: scale(0.98); /* Dá um efeito de afundamento */
+}
+
+.price {
+  margin-left: 1420px;
+  padding-right: 30px;
+}
