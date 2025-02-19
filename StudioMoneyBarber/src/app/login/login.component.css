@@ -1,0 +1,75 @@
+body {
+    background-image: url('/static/barberpole.png');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.login-container {
+    background-color: rgb(204, 204, 204, 0.75);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+.logo-frame {
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+.login-label {
+    margin-left: 2px;
+}
+.login-input {
+    width: 93%;
+    padding: 7px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#esqueci-senha {
+    color: #0044ff;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+.login-button, .cancelar-button {
+    width: 30%;
+    padding: 5px;
+    margin: 30px 0px 0px 40px;
+    border-radius: 5px;
+    background-color: #444;
+    color: white;
+    border: none;
+    transition: transform 0.2s ease;
+}
+.login-button:active, .cancelar-button:active {
+    transform: scale(0.98); /* Reduz o tamanho do botão quando clicado */
+}
+.conectar-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.conectar-button {
+    width: 48%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.conectar-button img {
+    width: 20px;
+    margin-right: 10px;
+}
+.register-link {
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: center;
+}

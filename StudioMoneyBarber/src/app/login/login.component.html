@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./login.component.css" />
+  </head>
+
+  <body>
+    <div class="login-container">
+      <div class="logo-frame">
+        <img src="/static/studioMoney.png" alt="Logo" width="100" />
+      </div>
+
+      <form id="login-form">
+        <label class="login-label">Email ou Celular:</label>
+        <input
+          type="text"
+          class="login-input"
+          placeholder="Email ou Celular"
+          id="email"
+          required
+        />
+        <label class="login-label">Senha:</label>
+        <input
+          type="password"
+          class="login-input"
+          placeholder="Senha"
+          id="password"
+          required
+        />
+
+        <a id="esqueci-senha" href="#">Esqueci minha senha</a>
+
+        <div>
+          <button type="submit" class="login-button">Login</button>
+          <button type="button" class="cancelar-button" onclick="clearForm()">
+            Cancelar
+          </button>
+        </div>
+
+        <div class="conectar-buttons">
+          <button class="conectar-button" style="background-color: white">
+            <img src="/static/google.png" alt="Google" /> Google
+          </button>
+          <button class="conectar-button" style="background-color: white">
+            <img src="/static/facebook.png" alt="Facebook" /> Facebook
+          </button>
+        </div>
+
+        <div class="register-link">
+          <p>
+            Novo por aqui?
+            <a href="#" style="text-decoration: none; color: #0044ff"
+              >Cadastrar-se</a
+            >
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          try {
+            const response = await fetch("http://127.0.0.1:5000/login", {
+              // Alterado para a URL do backend
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email, password }),
+            });
+
+            // Verifique o status da resposta
+            if (response.ok) {
+              const data = await response.json(); // Espera a resposta como JSON
+
+              // Verifique se o token está presente na resposta
+              if (data.token) {
+                localStorage.setItem("token", data.token);
+                window.location.href =
+                  "http://127.0.0.1:5500/StudioMoneyBarber/src/app/home/home.component.html"; // Redireciona para o dashboard
+              } else {
+                alert("Login falhou. Verifique suas credenciais.");
+              }
+            } else {
+              // Caso o servidor retorne erro, mostre o erro retornado
+              const errorData = await response.text(); // Use text() caso o servidor retorne um erro como texto
+              alert("Erro ao autenticar: " + errorData);
+            }
+          } catch (error) {
+            console.error("Erro ao autenticar:", error);
+            alert(
+              "Houve um erro ao tentar autenticar, por favor, tente novamente."
+            );
+          }
+        });
+
+      function clearForm() {
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
+      }
+    </script>
+  </body>
+</html>
